@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry, Niki</title>
+    <style>
+        /* Resetting margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            max-width: 600px;
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #343a40;
+            line-height: 1.6;
+        }
+
+        .heart {
+            color: #ff6b6b;
+            font-size: 4em;
+            animation: heartbeat 1.5s infinite;
+            margin: 20px 0;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .btn-forgive {
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #007bff;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .btn-forgive:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-angry {
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #dc3545;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 20px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .btn-angry:hover {
+            position: absolute;
+            top: calc(50% + 50px * (Math.random() - 0.5));
+            left: calc(50% + 50px * (Math.random() - 0.5));
+        }
+
+        .sparkle {
+            color: #ffc107;
+            font-size: 1.5em;
+            animation: sparkle 2s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .popup-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .popup h2 {
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+
+        .popup p {
+            font-size: 1.1em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>I'm Sorry, Niki</h1>
+        <div class="heart">❤️</div>
+        <p>
+            Hey Niki, I just wanted to say how deeply sorry I am. 
+            I know I made a mistake, and I regret hurting you. You mean the world to me, 
+            and I want to make things right. <span class="sparkle">✨</span><br>
+            Please forgive me?
+        </p>
+        <button class="btn-forgive" onclick="showPopup()">Forgive Me?</button>
+        <button class="btn-angry">No, I'm Angry</button>
+    </div>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h2>Thank You, Niki!</h2>
+            <p>Your forgiveness means everything to me. I'll do my best to make you happy and never make this mistake again. Love you always! ❤️</p>
+            <button class="btn-forgive" onclick="hidePopup()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById('popup').style.display = 'flex';
+        }
+
+        function hidePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
